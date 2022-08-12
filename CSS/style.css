@@ -1,0 +1,155 @@
+body {
+  margin: 0px;
+  background-color: black;
+}
+
+.shadow_1 {
+  animation-name: bio_entry_animation_right;
+  animation-duration: 3.35s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+.shadow_2 {
+  animation-name: bio_entry_animation_left;
+  animation-duration: 3.35s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+@keyframes bio_entry_animation_left {
+  from {
+    position: relative;
+    right: 100%;
+
+  }
+
+  to {
+    position: relative;
+    right: 0%;
+
+  }
+}
+
+@keyframes bio_entry_animation_right {
+  from {
+    position: relative;
+    left: 100%;
+
+  }
+
+  to {
+    position: relative;
+    left: 0%;
+
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+}
+
+h3 {
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 5px;
+  display: block;
+  text-decoration: underline dotted;
+  text-shadow: 0px 0px 20px aqua;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.info {
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(21, 225, 21);
+  text-align: center;
+  padding: 30px 30px 10px 30px;
+}
+
+.links {
+  text-decoration: none;
+  /* color: whi; */
+}
+
+a:hover {
+  color: aqua;
+}
+
+.logo {
+  margin-top: 15px;
+  align-self: center;
+  box-shadow: 3px 2px 7px grey;
+}
+
+.logo img {
+  transition: all .2s ease 0s;
+}
+
+.logo img:hover {
+  width: 210px;
+}
+
+.socials {
+  align-self: center;
+  color: aqua;
+  margin: 0px 0px 20px 0px;
+}
+
+.socials a img {
+  width: 32px;
+  margin: 12px 9px 5px 9px;
+  transition: all .45s ease-in-out 0s;
+}
+
+.socials a img:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.rom-section-my-roms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rom-section-my-roms img {
+  border-radius: 50%;
+  width: 50px;
+  margin: 15px 10px;
+  transition: all 0.25s ease-in-out 0s;
+}
+
+.rom-section-my-roms img:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 10px green;
+}
+
+footer {
+  font-size: .8rem;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  margin: 20px 0px 30px 0px;
+}
+
+/* Some usefull classes */
+.secondary-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+.white {
+  color: rgba(255, 255, 255, 0.806);
+}
+
+.underline {
+  text-decoration: underline grey dashed;
+}
+
+.center {
+  text-align: center;
+}

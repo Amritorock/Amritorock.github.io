@@ -11,144 +11,49 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&family=Roboto+Condensed:wght@300&family=Roboto+Mono:wght@300&display=swap"
         rel="stylesheet">
-    <style>
-        body {
-            margin: 0px;
-            background-color: black;
-        }
-
-        .shadow_1 {
-            animation-name: bio_entry_animation_right;
-            animation-duration: 3s;
-            animation-iteration-count: 1;
-            animation-timing-function: ease;
-        }
-
-        .shadow_2 {
-            animation-name: bio_entry_animation_left;
-            animation-duration: 3s;
-            animation-iteration-count: 1;
-            animation-timing-function: ease;
-        }
-
-        @keyframes bio_entry_animation_left {
-            from {
-                position: relative;
-                right: 100%;
-
-            }
-
-            to {
-                position: relative;
-                right: 0%;
-
-            }
-        }
-
-        @keyframes bio_entry_animation_right {
-            from {
-                position: relative;
-                left: 100%;
-
-            }
-
-            to {
-                position: relative;
-                left: 0%;
-
-            }
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            max-width: 100%;
-            height: auto;
-        }
-
-        h3 {
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 5px;
-            display: block;
-            text-decoration: underline dotted;
-            text-shadow: 0px 0px 20px aqua;
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        .info {
-            font-family: 'Roboto Mono', monospace;
-            color: rgb(21, 225, 21);
-            text-align: center;
-            padding: 30px 30px 20px 30px;
-        }
-
-        a:hover {
-            color: aqua;
-        }
-
-        .logo {
-            margin-top: 15px;
-            align-self: center;
-            box-shadow: 3px 2px 7px grey;
-        }
-
-        .logo img {
-            transition: all .2s ease 0s;
-        }
-
-        .logo img:hover {
-            width: 210px;
-        }
-
-        div p a {
-            text-decoration: none;
-            color: greenyellow;
-        }
-
-        .socials {
-            align-self: center;
-            color: aqua;
-            margin: 0px 0px 20px 0px;
-        }
-
-        .socials a img {
-            width: 30px;
-            margin: 12px 9px 5px 9px;
-            transition: all .5s ease-in-out 0s;
-        }
-
-        .socials a img:hover {
-            transform: rotate(360deg) scale(1.2);
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 
 <body>
     <h3 class="shadow_2"><strong>MY BIO</strong></h3>
     <div class="container">
         <div class="logo shadow_1"><a href="https://www.facebook.com/profile.php?id=100062160974318"><img width="200px"
-                    src="https://telegra.ph/file/1d4ec83b0d185b7a0b043.jpg" alt=""></a></div>
+                    src="/Images/profile-pic.jpg" alt=""></a></div>
         <div class="info shadow_2">
             <p>My name is Amrito Karmokar.</p>
             <p>I am 18 yrs old.</p>
-            <p>❤️ Single.</p>
             <p>Interested In Android Stuff.</p>
             <p>Religion Hinduism.</p>
-            <P>My Best Friend: Biswajit Mishra.</p>
+            <P>My Best Friend is <a class="links white" href="https://mishrabiswajit.github.io/">Biswajit Mishra</a>.
+            </p>
             <p>Currently I'm Learning About Making jewellery.</p>
             <p></p>
         </div>
-        <div class="socials  shadow_1">
-            <a href="https://github.com/Amritorock" target="_blank"><img
-                    src="https://telegra.ph/file/a16e76df6181e6439b981.png" alt="github"></a>
-            <a href="https://www.instagram.com/amrito_karmokar_ak/" target="_blank"><img
-                    src="https://telegra.ph/file/bd28e0a19faced99c3171.png" alt="instagram"></a>
-            <a href="https://t.me/Amritoooo" target="_blank"><img
-                    src="https://telegra.ph/file/6d39037d3ff66a37dbda1.png" alt="telegram"></a>
+        <div class="rom-section shadow_1">
+            <h4 class="secondary-heading center white underline">Roms I maintain</h4>
+            <div class="rom-section-my-roms">
+                <div class="rom-section-my-roms-pixel-plus">
+                    <a href="https://t.me/rmx_1911/1623"><img src="/Images/pixel-plus.jpg" alt="pixel-plus-logo"></a>
+                </div>
+                <div class="rom-section-my-roms-ricedroid">
+                    <a href="https://t.me/rmx_1911/1658"><img src="/Images/ricedroid-logo.jpg" alt="ricedroid-logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="socials  shadow_2">
+            <h4 class="secondary-heading center white underline">Contact Me</h4>
+            <a href="https://github.com/Amritorock" target="_blank"><img src="Images/github_logo.png" alt="github"></a>
+            <a href="https://www.instagram.com/amrito_karmokar_ak/" target="_blank"><img src="Images/instagram_logo.png"
+                    alt="instagram"></a>
+            <a href="https://t.me/Amritoooo" target="_blank"><img src="Images/telegram_logo.png" alt="telegram"></a>
         </div>
     </div>
+    <footer class="center white shadow_1">Made with ❤️ by <a class="white links"
+            href="https://mishrabiswajit.github.io/">Biswajit
+            Mishra</a></footer>
 </body>
 
 </html>

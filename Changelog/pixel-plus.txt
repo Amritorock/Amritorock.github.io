@@ -1,0 +1,4 @@
+* July security patch
+* Fixed storage usage issue on OTA app
+* Updated translations
+* Other minor issues have been fixed
