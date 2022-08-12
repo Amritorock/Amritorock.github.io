@@ -1,0 +1,66 @@
+Sushi Launcher:
+• Fixed preference card icons tint
+• Fixed All apps scrim color
+• Added shadow to text views of QuickSpace
+• Fixed work profile paddings
+• Moved blur customization to misc preference
+• Added restart tips to home screen preference
+• Completely disabled blur on app launch
+• Always enabled surfaceflinger early wake-up
+• Stopped applying disabled Alpha attribute to search hint
+• Revamped Overview Actions and style
+• Don't always show screenshots option in task menu
+• Limited maximum opacity to 80% for recents app view
+• Reworked QSB hotseat colors
+• Linked hotseat bg corner radius to dialogCornerRadius attribute
+• Relaxed memory info status updates
+• Added a toggle to show/hide app drawer search bar
+• Added a toggle to enable scroll vibration
+• Added kill App button to recents overview
+. Added Overview buttons placement customizations
+. Added option for forced white app label
+. Added toggle for memory info view
+. Added toggles for recent quick actions
+• Applied material design to call log cards
+• Fixed swapped empty illustration drawables
+
+Game Space:
+• Fixed panel view not losing focus when touching outside
+• Fixed default ringer mode value
+• Added do not change option to ringer mode
+• Imported gamespace-themed icon
+• Resort ringer mode in game space
+
+System:
+• Use config_bodyFontFamilyMedium for QS Clock
+• Used pixel wars as body font to fix all CAPS issues on nothing dot font
+• Fixed overlapping on some Custom Fonts
+• Added a Headline-only version of nothing font overlay
+• Dynamically change clock color when using nothing font
+• Convert hotspot timeout preference to a list preference in Settings
+• Added a preference to the battery Optimization page in Settings
+• Added Back Raven Pixel 6 Pro Fingerprint
+• Enabled System Level Blur
+• Added navigation handle dimensions from Android 13 Beta 3
+• Included Anx Camera (Beta) [thanks to kota]
+• Updated OPWidget to v2.0.9
+• Reduced QS Tiles margin
+• Linked auto brightness background to corner radius
+• Exposed brightness slider tunables for theming
+• Implemented Clear Speaker feature
+• Improved System Smoothness, Stability & reliability
+• Fixed issues with Safetynet Pass
+• Fixed Issues with some Instagram Stories not loading
+• Updated notification count overlay
+• Turn camera.xiaomi.so's thread pool shrink into nop
+• Added an overlay for notch bar killer in Dev Settings
+• Improved Hiding magisk
+. Added battery stats reset
+. Added new boot animation
+• Much more under-the-hood optimizations
+
+riceDroid Settings:
+• Added pixelwars font
+• Improved Nothing Font Overlays
+• Use config_headline FontFamily for font sample
+• Updated QS tile count preference to dotos qs tile count preference
