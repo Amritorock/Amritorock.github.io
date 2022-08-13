@@ -1,4 +1,4 @@
-* July security patch
-* Fixed storage usage issue on OTA app
+* August security patch
+* Monet bootanimation added
 * Updated translations
 * Other minor issues have been fixed
