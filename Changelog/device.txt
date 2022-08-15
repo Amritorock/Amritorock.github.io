@@ -2,18 +2,21 @@ Device side changes:
 
 * SILONT KERNEL AS DEFAULT 
 * Switched to Thermal 2.0 mock
-* Enabled File based Encryption
-* Fixed NFC 
-* Fixed Auxiliary Camera
 * Synced media props with stock
 * Updated surfaceflinger props
 * Boosted I/O performance during bootup
 * Switched to AIDL libperfmgr Power Hal
-* AND Much More CHANGES
+* Boosted GPU to max for expensive rendering
+* Implement extension for kernelspace battery saver
+* Import powerhint configuration from sunfish
+* And Much More CHANGES
+
+*Kernel Side
+*Introduce kernelspace battery saver mode
 
 Thanks
 @BabluS for Device 🌲
 @IrawansAlt for Kernel 🌲
 @Megalodonzs 
 
-@JD_1985/@Crypt0_45 thanks for testing 👍
+@JD_1985/@Xblaze/@crypt0 thanks for testing 👍
