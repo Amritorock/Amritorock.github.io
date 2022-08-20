@@ -1,22 +1,23 @@
 Device side changes:
 
-* SILONT KERNEL AS DEFAULT 
-* Switched to Thermal 2.0 mock
+* Added Thermal 2.0 mock
 * Synced media props with stock
 * Updated surfaceflinger props
+* Fixed screen tearing issue
+* Tuned cpusets according to trinket
 * Boosted I/O performance during bootup
 * Switched to AIDL libperfmgr Power Hal
 * Boosted GPU to max for expensive rendering
 * Implement extension for kernelspace battery saver
-* Import powerhint configuration from sunfish
+* Imported powerhint configuration from sunfish
 * And Much More CHANGES
 
-*Kernel Side
-*Introduce kernelspace battery saver mode
+*Kernel 
+*SILONT Chisato
 
 Thanks
 @BabluS for Device 🌲
 @IrawansAlt for Kernel 🌲
 @Megalodonzs 
 
-@JD_1985/@Xblaze/@crypt0 thanks for testing 👍
+@Xblaze thanks for testing 👍
