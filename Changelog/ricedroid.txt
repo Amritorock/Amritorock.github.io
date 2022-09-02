@@ -1,66 +1,117 @@
-Sushi Launcher:
-• Fixed preference card icons tint
-• Fixed All apps scrim color
-• Added shadow to text views of QuickSpace
-• Fixed work profile paddings
-• Moved blur customization to misc preference
-• Added restart tips to home screen preference
-• Completely disabled blur on app launch
-• Always enabled surfaceflinger early wake-up
-• Stopped applying disabled Alpha attribute to search hint
-• Revamped Overview Actions and style
-• Don't always show screenshots option in task menu
-• Limited maximum opacity to 80% for recents app view
-• Reworked QSB hotseat colors
-• Linked hotseat bg corner radius to dialogCornerRadius attribute
-• Relaxed memory info status updates
-• Added a toggle to show/hide app drawer search bar
-• Added a toggle to enable scroll vibration
-• Added kill App button to recents overview
-. Added Overview buttons placement customizations
-. Added option for forced white app label
-. Added toggle for memory info view
-. Added toggles for recent quick actions
-• Applied material design to call log cards
-• Fixed swapped empty illustration drawables
+RiceDroid Update Changelogs
+Rice Code: 5.0
+Rice Version: Halo Halo - a Filipino dessert made with mixed fruit, boiled sweetened white beans, milk, and shaved ice, typically topped with purple yam, crème caramel, and ice cream.
 
-Game Space:
-• Fixed panel view not losing focus when touching outside
-• Fixed default ringer mode value
-• Added do not change option to ringer mode
-• Imported gamespace-themed icon
-• Resort ringer mode in game space
+Legend:
+[] = Credits and thanks to
+UR = User's Requests
+MR = Maintainer's Request 
+CP = Cherry-pick changes under ricedroid additions
+MD = Co-authored/partly modified/minor code changes
+AOSP = Cherry-pick changes from AOSP gerrit/master branch
 
-System:
-• Use config_bodyFontFamilyMedium for QS Clock
-• Used pixel wars as body font to fix all CAPS issues on nothing dot font
-• Fixed overlapping on some Custom Fonts
-• Added a Headline-only version of nothing font overlay
-• Dynamically change clock color when using nothing font
-• Convert hotspot timeout preference to a list preference in Settings
-• Added a preference to the battery Optimization page in Settings
-• Added Back Raven Pixel 6 Pro Fingerprint
-• Enabled System Level Blur
-• Added navigation handle dimensions from Android 13 Beta 3
-• Included Anx Camera (Beta) [thanks to kota]
-• Updated OPWidget to v2.0.9
-• Reduced QS Tiles margin
-• Linked auto brightness background to corner radius
-• Exposed brightness slider tunables for theming
-• Implemented Clear Speaker feature
-• Improved System Smoothness, Stability & reliability
-• Fixed issues with Safetynet Pass
-• Fixed Issues with some Instagram Stories not loading
-• Updated notification count overlay
-• Turn camera.xiaomi.so's thread pool shrink into nop
-• Added an overlay for notch bar killer in Dev Settings
-• Improved Hiding magisk
-. Added battery stats reset
-. Added new boot animation
-• Much more under-the-hood optimizations
+===== Start of Changelog for version 5.0 =====
 
-riceDroid Settings:
-• Added pixelwars font
-• Improved Nothing Font Overlays
-• Use config_headline FontFamily for font sample
-• Updated QS tile count preference to dotos qs tile count preference
+==== riceDroid Additions ===== changes we did or modified
+* [AOSP][CP][MD] runtime improvements and August ASB patches from master branch [neobuddy89|crdroid team|lineageos]
+* Adapted and cherry-picked changes/fixes from android 13
+- Android 13 music player and lockscreen notification style
+- Animations fixes and improvements
+- Bubbles and notification improvements 
+- Direct share/sharesheet improvements
+- Fix IME/keyboard overlapping with edittext elements
+- Fixed wifi/internet dialog systemui crash/not responding
+- Fixed network related issues
+- QS panel, splitshade, LS improvements
+- Reduced cpu usage from main/ui thread
+- Rendering improvements
+- Resolved misc memory leaks, runtime breakage etc.  
+- Resolved splash animations randomly being cutted off
+- Resolved recent apps/overview losing input focus 
+- Vibrant monet color scheme based from android 13 monet styles
+* Added back Lockscreen Blur Media Filters [eldainosor]
+ - [MD]: Make blur radius configurable
+* Adapted CAF/CLO revisions to AOSP
+  - CAF/CLO tag patches taken from CAF/CLO based roms [AOSPA]
+  - CAF/CLO optimization ports (needs to be tuned/enabled via device tree)
+* Dialer Improvements:
+- Improved Design based on google's M3 design
+- [CP]: Crowdin updates [gwolf2u]
+* Fixed some issues with Omnijaws (random crashing, permission error)
+* Fixed statusbar, keyguard and QSB views paddings
+* Fixed systemui restart issues (combined signal etc, removed systemui restart prompt, just use the power menu one)
+* Improved Dashboard Styles
+- automatically detects if build variant (vanilla/pixel)
+- Added AOSP style
+- Fixed Arcane Style usercard avatar
+* Improved Lockscreen notifcation and smartspace paddings
+* [MD] Resizeable QS Date, QS and Statusbar clock [StarkDroid|Corvus-AOSP]
+* [MD] Statusbar Clock background chip [StarkDroid|Corvus-AOSP]
+* [MD] Statusbar paddings customizations [IDontCare-05|CrisbalGreece]
+* QS Weather view position customization
+* Redesigned battery and storage progress bars to OOS/RUI design pattern
+* Redesigned About phone layout banner [IacobIonut01|DotOS]
+* Reverted back to vivid monet shades (sorry black theme users)
+* SushiLauncher: Spicy Tuna
+  - [CP]Add Weather view from OmniJaws [StarkDroid|Corvus AOSP]
+  - [CP] preference for wallpaper scrolling [neobuddy89|crdroid]
+  - [CP] restore blur on configuration changes [ritujb]
+  - Fine tuned material color shades
+  - Fixed google search bar color on light mode
+  - Fixed recents apps resources tint
+  - Keyguard/lockscreen Android 13 zoom animation toggle
+  - Increased max allowed blur radius
+  - Introducing extended google smartspace layout [teamfiles - for the pixel launcher mod concept]
+  - Redesign QuickSearchBar [teamfiles - for the pixel launcher mod concept]
+* Switched to glassy blur effect for background views, recents etc 
+* Switched to OOS 12/13 ui sound effects
+* System Shapes: Improved theming support
+* Toggle-able Translucent QS style [Project Fluid|elluzion|Androbuddy]
+* Translation support improvements 
+ - Updated turkish translations [Lafactorial]
+ - Updated chinese translations [xingxingchuan|Fldicoahkiin]
+ - Updated spanish translations (09/02/22) [jesusvpct]
+ - made more strings translatable ~ if you want it to be merged to the source please send a message to the group with #translation with url of your repo, we will cherrypick it and add it to source for you with authorship intact (our crowdin is limited).
+ * Volume panel media output controller toggle
+ * Volume panel style improvements
+
+==== Cherry-picked features Additions ==== purely cherry-picked changes we didnt modified
+* crDroid August Upstream changes [neobuddy89|gwolf2u|iusmac|shevt|xNombre]
+- Crowdin Translations
+- Fixed navigation bar theming
+- Fixed handwave & proximity pulse conflict
+- Fixed qs customizer corner radius
+- Rounded corner improvements
+* Fixed power menu systemUI restart showing dialog when restarting [ezio84]
+* Fixed status bar burn-in protection shifting base padding when orientation changed [EcrosoftXiao]
+* Fixed user profile photo picker crash [tmjosten|Evolution X]
+* Improved vertical QS tile layout and animation [tmjosten|Evolution X]
+* Improved Statusbar clock background paddings - [StarkDroid|Corvus-AOSP]
+- Updated android runtime improvements and fixes as of 08/29/22
+* LineageOS August Upstream changes [luk1337|althafvly|bgcngm|sevenrock|chirayudesai|stricted|mikeNg|haggertk|BadDaemon]
+- August ASB patches
+- Lineage dependencies upstream (HALS, blobs, sepolicy more)
+_ Lineage translations updates
+_ Lineage frameworks patches and improvements
+* Omnijaws Improvements [StarkDroid|Corvus AOSP]
+* Redesign and animate battery and storage usage bars [StarkDroid|Corvus AOSP] 
+* Show August security patch on settings [jhenrique09|PixelExperience] 
+* Show ripple on face unlock [xyzuan|xdroid OSS]
+* Switch notification background to monet on heads up [DillerOFire|Project Fluid]
+* Toast icon toggle and improvements [LordClockan|SagarMakhar|BoredOutOfMyGit|jhenrique09|idoybh]
+* QuickSettings Weather view - [StarkDroid|Corvus-AOSP]
+* Volume panel improvements [Arian16ka]
+- Show media output controller if there is an active stream
+- Move the MediaOutputDialog above status bar 
+* Weather provider from OmniRom - [maxwen]
+
+Big thanks to pimpmaneaton for these fork changes merged on main branch:
+* Big dotted/circle battery indicator [DennySPB]
+* ColorController: Fix getting default color [varund7726]
+* Lockscreen charging improvements [calebcabob|SagarMakhar]
+* QuickSettings vibrate/haptic feedback [mydongistiny|amartinz]
+* Screenshot shutter sound toggle [maxwen]
+
+===== End of Changelog for version 5.0 =====
+
+PS: if we missed some credits please let us know! Have a nice day.
