@@ -1,23 +1,20 @@
 Device side changes:
 
-* Added Thermal 2.0 mock
-* Synced media props with stock
-* Updated surfaceflinger props
-* Fixed screen tearing issue
-* Tuned cpusets according to trinket
-* Boosted I/O performance during bootup
-* Switched to AIDL libperfmgr Power Hal
-* Boosted GPU to max for expensive rendering
-* Implement extension for kernelspace battery saver
-* Imported powerhint configuration from sunfish
-* And Much More CHANGES
+* Fixed Heating issue on Normal Use
+* Added Battery Health Status
+* Dropped kernelspace Battery Saver
+* Addressed Proper Device Model as Device Name
+* Tweaked For Smoother Scrolling And Better Responsiveness
+* Tree Cleanup
+
+Bug ?
+You tell me
 
 *Kernel 
 *SILONT Chisato
 
 Thanks
-@BabluS for Device 🌲
-@IrawansAlt for Kernel 🌲
-@Megalodonzs 
+@BabluS for Device 🎄
+@IrawansAlt for Kernel 🎄
 
-@Xblaze thanks for testing 👍
+@SmileOK89/@JD_1985 thanks for testing 👍
