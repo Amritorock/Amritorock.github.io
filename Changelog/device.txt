@@ -1,11 +1,15 @@
-Device side changes:
+Device side changes here :
 
-* Fixed Heating issue on Normal Use
-* Added Battery Health Status
-* Dropped kernelspace Battery Saver
-* Addressed Proper Device Model as Device Name
-* Tweaked For Smoother Scrolling And Better Responsiveness
-* Tree Cleanup
+* FIXED ALL PREVIOUS ISSUE
+* FIXED 5S CAMERA
+* TUNED ZRAM TO 50%
+* ENABLED EIS
+* ADDED OVERLAY TO FIX FINGERPRINT WAKE-UP ANIMATION NOW MORE SMOOTH
+* DROPPED SOME UNNECESSARY BLOBS 
+* ADDED RAW10 BUFFER FIX
+* ADDRESSED DENIALS OF AUX CAMERA
+
+AND MUCH MORE CHANGES.....
 
 Bug ?
 You tell me
@@ -17,4 +21,4 @@ Thanks
 @BabluS for Device 🎄
 @IrawansAlt for Kernel 🎄
 
-@SmileOK89/@JD_1985 thanks for testing 👍
+(Thanks R5x TESTERS)
