@@ -1,65 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amrito's Bio</title>
+    <title>Amrito | Android Developer</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&family=Roboto+Condensed:wght@300&family=Roboto+Mono:wght@300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link
+        href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
-<body>
-    <h3 class="shadow_2"><strong>MY BIO</strong></h3>
-    <div class="container">
-        <div class="logo shadow_1"><a href="https://www.facebook.com/profile.php?id=100062160974318"><img width="200px"
-                    src="/Images/profile-pic.jpg" alt=""></a></div>
-        <div class="info shadow_2">
-            <p>My name is Amrito Karmokar.</p>
-            <p>I am 18 yrs old.</p>
-            <p>My Device Realme5i/C25s.</p>
-            <p>Interested In Android Stuff.</p>
-            <p>Religion Hinduism.</p>
-            <P>My Best Friend is <a class="links white" href="https://mishrabiswajit.github.io/">Biswajit Mishra</a>.
-            </p>
-            <p>Currently I'm Learning About Android Stuff and github.</p>
-            <p></p>
+<body class="antialiased selection:bg-accent-cyan selection:text-black">
+
+    <!-- Ambient Background -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <!-- Purple Blob (Top Left) -->
+        <div class="ambient-light animate-float-1"
+            style="top: -10%; left: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(189,0,255,0.15) 0%, rgba(0,0,0,0) 70%);">
         </div>
-        <div class="rom-section shadow_1">
-            <h4 class="secondary-heading center white underline">Roms Which I Maintain For My Device</h4>
-            <div class="rom-section-my-roms">
-                <div class="rom-section-my-roms-pixel-plus">
-                    <a href="https://t.me/rmx_1911/1702"><img src="/Images/pixel-plus.jpg" alt="pixel-plus-logo"></a>
-                </div>
-                <div class="rom-section-my-roms-Elixir">
-                    <a href="https://t.me/rmx_1911/1716"><img src="/Images/Elixir logo.jpg" alt="Elixir logo"></a>
-                </div>
-            </div>
+
+        <!-- Cyan Blob (Bottom Right) -->
+        <div class="ambient-light animate-float-2"
+            style="bottom: -10%; right: -10%; width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,242,255,0.12) 0%, rgba(0,0,0,0) 70%);">
         </div>
-        <div class="donate shadow_2">
-            <h4 class="secondary-heading center white underline">Donate Me</h4>
-            <div class="center white">UPI : biswajitm794@fbl</div>
-            <div class="center white">Scan QR : <a class="white underline" href="/Images/qr_logo.jpg">HERE</a></div>
+
+        <!-- Green Accent Blob (Center Right) -->
+        <div class="ambient-light animate-float-3"
+            style="top: 40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,255,157,0.08) 0%, rgba(0,0,0,0) 70%);">
         </div>
-        <div class="socials  shadow_2">
-            <h4 class="secondary-heading center white underline">Contact Me</h4>
-            <a href="https://github.com/Amritorock" target="_blank"><img src="Images/github_logo.png" alt="github"></a>
-            <a href="https://www.instagram.com/amrito_karmokar_ak/" target="_blank"><img src="Images/instagram_logo.png"
-                    alt="instagram"></a>
-            <a href="https://t.me/Amritoooo" target="_blank"><img src="Images/telegram_logo.png" alt="telegram"></a>
+
+        <!-- Blue Accent Blob (Bottom Left) -->
+        <div class="ambient-light animate-float-1"
+            style="bottom: 10%; left: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,136,255,0.08) 0%, rgba(0,0,0,0) 70%); animation-delay: -5s;">
         </div>
     </div>
-    <footer class="center white shadow_1">Made with ❤️ by <a class="white links"
-            href="https://mishrabiswajit.github.io/">Biswajit
-            Mishra</a></footer>
+
+    <!-- Mouse Spotlight -->
+    <div id="spotlight" class="spotlight hidden md:block"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[300px] md:w-auto md:max-w-none">
+        <div
+            class="glass-nav rounded-full p-2 flex items-center justify-between md:justify-center md:gap-1 shadow-2xl shadow-black/50">
+            <a href="#home"
+                class="p-3 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 group relative">
+                <i class="fa-solid fa-house"></i>
+                <span
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Home</span>
+            </a>
+            <a href="#about"
+                class="p-3 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 group relative">
+                <i class="fa-solid fa-user"></i>
+                <span
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">About</span>
+            </a>
+            <a href="#work"
+                class="p-3 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 group relative">
+                <i class="fa-solid fa-layer-group"></i>
+                <span
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Work</span>
+            </a>
+            <a href="#changelog"
+                class="p-3 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 group relative">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Logs</span>
+            </a>
+            <a href="#contact"
+                class="p-3 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 group relative">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span
+                    class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-accent-purple/10 rounded-full blur-[150px] mix-blend-screen -z-10">
+            </div>
+
+
+            <h1
+                class="text-center font-display font-medium text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight mb-6 hero-text opacity-0 translate-y-8 py-2">
+                Building <span class="gradient-text italic pr-4">Digital</span><br>
+                Experiences
+            </h1>
+
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl text-center mb-10 hero-text opacity-0 translate-y-8">
+                Hi, I'm <span class="text-white font-semibold">Amrito</span>. Android Enthusiast & Rom Maintainer based
+                in Bangladesh. Crafting clean interfaces and robust systems.
+            </p>
+
+            <div class="flex gap-4 hero-cta opacity-0 translate-y-8">
+                <a href="#work"
+                    class="group relative px-8 py-3 bg-white text-black font-semibold rounded-full overflow-hidden">
+                    <span class="relative z-10">View Work</span>
+                    <div
+                        class="absolute inset-0 bg-accent-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
+                    </div>
+                </a>
+                <a href="#contact" class="px-8 py-3 glass rounded-full font-medium hover:bg-white/10 transition-colors">
+                    Contact Me
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section (Bento Grid Start) -->
+        <section id="about" class="py-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[300px]">
+
+                <!-- Profile Image -->
+                <div
+                    class="glass rounded-3xl p-2 md:col-span-1 md:row-span-2 relative group overflow-hidden bento-card min-h-[300px]">
+                    <img src="/Images/profile-pic.jpg" alt="Amrito"
+                        class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-3xl font-display font-bold">Amrito<br>Karmokar</h3>
+                        <p class="text-gray-400 mt-2">18 Years Old</p>
+                    </div>
+                </div>
+
+                <!-- Bio Text -->
+                <div
+                    class="glass rounded-3xl p-8 md:col-span-2 flex flex-col justify-center bento-card group hover:bg-white/5 transition-colors">
+                    <i class="fa-solid fa-quote-left text-4xl text-accent-purple mb-4"></i>
+                    <p class="text-xl md:text-2xl text-gray-200 font-light leading-relaxed">
+                        Top-tier Android customization specialist. I turn stock devices into high-performance machines.
+                        Currently keeping the <span class="text-accent-cyan font-medium">Realme 5i</span> alive and
+                        kicking.
+                    </p>
+                </div>
+
+                <!-- Stats / Info -->
+                <div
+                    class="glass rounded-3xl p-6 flex flex-col justify-between md:col-span-1 bento-card hover:border-accent-green/50 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-mobile-screen text-white"></i>
+                        </div>
+                        <h4 class="text-gray-400 uppercase text-sm font-bold tracking-wider">Device</h4>
+                    </div>
+                    <p class="text-2xl font-display">Realme 5i<br><span class="text-gray-500 text-lg">C25s</span></p>
+                </div>
+
+                <!-- Learning -->
+                <div
+                    class="glass rounded-3xl p-6 flex flex-col justify-between md:col-span-1 bento-card hover:border-accent-purple/50 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
+                            <i class="fa-brands fa-github text-white"></i>
+                        </div>
+                        <h4 class="text-gray-400 uppercase text-sm font-bold tracking-wider">Learning</h4>
+                    </div>
+                    <p class="text-2xl font-display">Android Stuff<br><span class="text-gray-500 text-lg">& Git
+                            Workflow</span></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="py-20">
+            <h2 class="text-4xl md:text-6xl font-display font-medium mb-12 text-center">Maintained ROMs</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- ROM 1 -->
+                <a href="https://t.me/rmx_1911/1702" target="_blank"
+                    class="group glass rounded-3xl p-4 hover:bg-white/5 transition-all duration-500 relative overflow-hidden bento-card min-h-[400px] flex flex-col justify-end">
+                    <img src="/Images/pixel-plus.jpg" alt="Pixel Plus"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+
+                    <div class="relative z-10 p-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span
+                                class="bg-accent-cyan/20 text-accent-cyan text-xs font-bold px-3 py-1 rounded-full border border-accent-cyan/20 backdrop-blur-md">OFFICIAL</span>
+                        </div>
+                        <h3 class="text-4xl font-display font-medium mb-2">Pixel Plus UI</h3>
+                        <p class="text-gray-300">Experience pure Google Pixel aesthetics with added customization
+                            features.</p>
+                        <div
+                            class="mt-6 flex items-center gap-2 text-white font-medium group-hover:gap-4 transition-all">
+                            <span>Get Download</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ROM 2 -->
+                <a href="https://t.me/rmx_1911/1716" target="_blank"
+                    class="group glass rounded-3xl p-4 hover:bg-white/5 transition-all duration-500 relative overflow-hidden bento-card min-h-[400px] flex flex-col justify-end">
+                    <img src="/Images/Elixir%20logo.jpg" alt="Elixir"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+
+                    <div class="relative z-10 p-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span
+                                class="bg-accent-purple/20 text-accent-purple text-xs font-bold px-3 py-1 rounded-full border border-accent-purple/20 backdrop-blur-md">COMMUNITY</span>
+                        </div>
+                        <h3 class="text-4xl font-display font-medium mb-2">Project Elixir</h3>
+                        <p class="text-gray-300">Minimalist UI with stability and performance at its core.</p>
+                        <div
+                            class="mt-6 flex items-center gap-2 text-white font-medium group-hover:gap-4 transition-all">
+                            <span>Get Download</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Changelog Section -->
+        <section id="changelog" class="py-20">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-4xl md:text-6xl font-display font-medium">Changelogs</h2>
+                <div class="hidden md:flex gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                </div>
+            </div>
+
+            <!-- Dynamic Changelog Grid -->
+            <div id="changelog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Loading State -->
+                <div class="glass p-6 rounded-3xl col-span-1 md:col-span-3 text-center">
+                    <i class="fa-solid fa-circle-notch fa-spin text-accent-cyan text-3xl mb-4"></i>
+                    <p class="text-gray-400">Loading changelogs...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community & Socials -->
+        <section id="contact" class="py-20 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[180px]">
+
+                <!-- Connect Title -->
+                <div class="glass rounded-3xl p-8 md:col-span-2 flex flex-col justify-center bento-card">
+                    <h2 class="text-4xl font-display font-medium">Let's<br>Connect.</h2>
+                    <p class="text-gray-400 mt-2">Find me on these platforms.</p>
+                </div>
+
+                <!-- Github -->
+                <a href="https://github.com/Amritorock" target="_blank"
+                    class="glass rounded-3xl p-6 flex flex-col justify-center items-center gap-4 hover:bg-white/10 transition-colors bento-card group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-github text-3xl text-white"></i>
+                    </div>
+                    <span class="font-medium">GitHub</span>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/Amritoooo" target="_blank"
+                    class="glass rounded-3xl p-6 flex flex-col justify-center items-center gap-4 hover:bg-[#0088cc]/20 transition-colors bento-card group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-[#0088cc] flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-telegram text-3xl text-white"></i>
+                    </div>
+                    <span class="font-medium">Telegram</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/amrito_karmokar_ak/" target="_blank"
+                    class="glass rounded-3xl p-6 flex flex-col justify-center items-center gap-4 hover:bg-[#E1306C]/20 transition-colors bento-card group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-instagram text-3xl text-white"></i>
+                    </div>
+                    <span class="font-medium">Instagram</span>
+                </a>
+
+                <!-- Friends & Collaborators -->
+                <div class="glass rounded-3xl p-6 md:col-span-2 bento-card flex flex-col justify-center gap-4">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-white/10 bg-gray-800 flex items-center justify-center">
+                            <i class="fa-solid fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm text-gray-400 uppercase tracking-wider font-bold">Best Friend</h4>
+                            <a href="https://mishrabiswajit.github.io/" target="_blank"
+                                class="text-lg font-medium text-white hover:text-accent-cyan transition-colors">Biswajit
+                                Mishra</a>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-px bg-white/5"></div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-white/10 bg-gray-800 flex items-center justify-center">
+                            <i class="fa-solid fa-wand-magic-sparkles text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm text-gray-400 uppercase tracking-wider font-bold">Redesigned By</h4>
+                            <a href="https://mudabbirulsaad.com" target="_blank"
+                                class="text-lg font-medium text-white hover:text-accent-purple transition-colors">Mudabbirul
+                                Saad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donate -->
+                <div
+                    class="glass rounded-3xl p-6 md:col-span-1 bento-card flex flex-col justify-center items-center text-center relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <h4 class="font-bold text-green-400 mb-1">UPI Donate</h4>
+                    <p class="text-xs text-gray-300 break-all select-all">biswajitm794@fbl</p>
+                    <div class="mt-3 text-xs bg-white/10 px-2 py-1 rounded hover:bg-white/20 cursor-pointer">
+                        <a href="/Images/qr_logo.jpg" target="_blank">Scan QR</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 py-10 text-sm">
+            <p>&copy; 2025 Amrito Karmokar. All rights reserved.</p>
+            <p>reDesign by <span class="text-gray-400">Mudabbirul Saad</span></p>
+        </footer>
+
+    </main>
+
+    <!-- Changelog Modal -->
+    <div id="changelog-modal"
+        class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="glass w-full max-w-4xl max-h-[80vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl scale-100">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
+                <h3 id="changelog-title" class="text-2xl font-display font-bold">Changelog</h3>
+                <button onclick="closeChangelog()"
+                    class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto changelog-content custom-scrollbar">
+                <pre id="changelog-content"
+                    class="text-gray-300 text-sm leading-relaxed whitespace-pre-wrap font-mono">Loading...</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
